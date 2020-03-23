@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Test display</title>
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+<script src="js/site.js" asp-append-version="true"></script>
+<script src="js/pagination.js" asp-append-version="true"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+    getItems();
+</script>
+
+    <table class="pagination blueTable" data-pagecount="10" style="width: 100%" id="tContacts2">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Date of birth</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="Contacts"></tbody>
+    </table>
+<table class="blueTable" style="width: 50%" id="tNumbers">
+    <thead>
+    <tr>
+        <th>Number</th>
+    </tr>
+    </thead>
+    <tbody id="Numbers"></tbody>
+</table>
+<br/>
+<div id="editForm">
+    <form class="w3-container w3-border" style="width: 50%" action="javascript:void(0);" method="post" onsubmit="updateItem()">
+        <div class="w3-container w3-blue">
+            <h2>Edit contact form</h2>
+        </div>
+        <input type="hidden" id="edit-id"/>
+        <label class="w3-text-blue" for="edit-name">Name:</label>
+        <input class="w3-input w3-border" type="text" id="edit-name" />
+        <label class="w3-text-blue" for="edit-address">Address:</label>
+        <input class="w3-input w3-border" type="text" id="edit-address" />
+        <label class="w3-text-blue" for="edit-dateOfBirth">Phone number:</label>
+        <input class="w3-input w3-border" type="date" id="edit-dateOfBirth" />
+        <h2>Phone numbers</h2>
+        <label class="w3-text-blue" for="fNewPhoneEdit">New phone number:</label>
+        <input class="w3-input w3-border" type="text" id="fNewPhoneEdit" />
+        <br />
+        <input class="w3-button w3-blue" type="button" value="Add new phone number" id="addPhoneNumberEdit" />
+        <div class="w3-panel">
+            <ul class="listEdit w3-ul w3-card" style="width:50%"></ul>
+        </div>
+        <input class="w3-button w3-white w3-border w3-border-blue" type="submit" value="Save edits" />
+        <a onclick="closeInput()" aria-label="Close">Close</a>
+    </form>
+</div>
+<br/>
+    <form class="w3-container w3-border" style="width: 50%" action="javascript:void(0);" method="post" onsubmit="addItem()">
+        <div class="w3-container w3-blue">
+            <h2>New contact form</h2>
+        </div>
+        <label class="w3-text-blue" for="add-name">Name:</label>
+        <input class="w3-input w3-border" type="text" id="add-name" />
+        <label class="w3-text-blue" for="add-address">Address:</label>
+        <input class="w3-input w3-border" type="text" id="add-address" />
+        <label class="w3-text-blue" for="add-dateOfBirth">Phone number:</label>
+        <input class="w3-input w3-border" type="date" id="add-dateOfBirth" />
+        <h2>Phone numbers</h2>
+        <label class="w3-text-blue" for="fNewPhone">New phone number:</label>
+        <input class="w3-input w3-border" type="text" id="fNewPhone" />
+        <br/>
+        <input class="w3-button w3-blue" type="button" value="Add new phone number" id="addPhoneNumber" />
+        <div class="w3-panel">
+            <ul class="list w3-ul w3-card" style="width:50%"></ul>
+        </div>
+        <input class="w3-button w3-white w3-border w3-border-blue" type="submit" value="Save item" />
+    </form>
+</body>
+</html>
